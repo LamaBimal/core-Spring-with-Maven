@@ -7,4 +7,10 @@
 <bean id="messageid" class="com.mycompany.mavenproject.resources.Messages">
     <property name="message" value="Hello World.."/>
 </bean>
+
+<bean id="studentid" class="com.mycompany.mavenproject.resources.Student">
+    <property name="firstName" value="Bimal"/>
+    <property name="lastName" value="Tamang"/>
+</bean>
+
 </beans>

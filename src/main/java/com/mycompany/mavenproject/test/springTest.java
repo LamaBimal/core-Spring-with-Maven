@@ -6,8 +6,12 @@
 package com.mycompany.mavenproject.test;
 
 import com.mycompany.mavenproject.resources.Messages;
+import com.mycompany.mavenproject.resources.Student;
+import javax.annotation.Resource;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  *
@@ -20,5 +24,11 @@ public class springTest {
         ApplicationContext app= new ClassPathXmlApplicationContext("classpath:/beans.xml");
         Messages messages = (Messages)app.getBean("messageid");
         System.out.println("--The Message is "+messages.getMessage());
+        Student student = (Student)app.getBean("studentid");
+        student.show();
+        //using xmlBeanFactory for creating Bean
+        //Resource resouce = (Resource) new ClassPathResource("beans.xml");
+      //  BeanFactory factory = new xmlBeanFactory(resource);
+                
     }
 }
