@@ -12,5 +12,9 @@
     <property name="firstName" value="Bimal"/>
     <property name="lastName" value="Tamang"/>
 </bean>
+<bean id="studentconstid" class="com.mycompany.mavenproject.resources.Student">
+    <constructor-arg name="firstName" value="Nahid"/>
+    <constructor-arg name="lastName" value="Afrin"/>
+</bean>
 
 </beans>

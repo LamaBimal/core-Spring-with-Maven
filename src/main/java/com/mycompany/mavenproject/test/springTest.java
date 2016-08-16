@@ -26,9 +26,9 @@ public class springTest {
         System.out.println("--The Message is "+messages.getMessage());
         Student student = (Student)app.getBean("studentid");
         student.show();
-        //using xmlBeanFactory for creating Bean
-        //Resource resouce = (Resource) new ClassPathResource("beans.xml");
-      //  BeanFactory factory = new xmlBeanFactory(resource);
-                
+        //implementing constructor-args in beans.xml
+        Student student1 = (Student)app.getBean("studentconstid");
+        student1.show();
+       
     }
 }
