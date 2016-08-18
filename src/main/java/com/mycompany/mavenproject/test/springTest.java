@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 /**
@@ -21,13 +22,14 @@ public class springTest {
     
     public static void main(String args[])
     {
-        ApplicationContext app= new ClassPathXmlApplicationContext("classpath:/beans.xml");
-        Messages messages = (Messages)app.getBean("messageid");
+       //ApplicationContext app= new ClassPathXmlApplicationContext("classpath:/beans.xml");
+       FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("classpath:/beans.xml");
+        Messages messages = (Messages)context.getBean("messageid");
         System.out.println("--The Message is "+messages.getMessage());
-        Student student = (Student)app.getBean("studentid");
+        Student student = (Student)context.getBean("studentid");
         student.show();
         //implementing constructor-args in beans.xml
-        Student student1 = (Student)app.getBean("studentconstid");
+        Student student1 = (Student)context.getBean("studentconstid");
         student1.show();
        
     }
